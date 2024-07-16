@@ -6,13 +6,23 @@ export const StyledUList = styled.ul`
   list-style: none;
 `;
 
-interface StyledListProps {
-  $cart?: boolean;
-}
-
-export const StyledList = styled.li<StyledListProps>`
-  color: ${(props) => (props.$cart ? 'green' : 'black')};
+export const StyledList = styled.li`
   font-size: 2.4rem;
   font-family: 'Inter', sans-serif;
   font-weight: 900;
+`;
+interface StyledAnchorProp {
+  $cart?: boolean;
+}
+
+export const StyledAnchor = styled.a<StyledAnchorProp>`
+  color: ${(props) => (props.$cart ? '#EC4E20' : 'black')};
+  text-decoration: none;
+
+  &:hover {
+    color: red;
+  }
+  &:link {
+    color: ;
+  }
 `;

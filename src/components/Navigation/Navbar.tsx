@@ -1,13 +1,21 @@
 import React from 'react';
-import { StyledUList, StyledList } from './NavbarStyles';
+import { StyledUList, StyledList, StyledAnchor } from './NavbarStyles';
 
 function Navbar() {
   return (
     <nav>
       <StyledUList>
-        <StyledList>Home</StyledList>
-        <StyledList>Shop</StyledList>
-        <StyledList $cart>Cart</StyledList>
+        <StyledList>
+          <StyledAnchor href='/'>Home</StyledAnchor>
+        </StyledList>
+        <StyledList>
+          <StyledAnchor href='/favorites'>favorites</StyledAnchor>
+        </StyledList>
+        <StyledList>
+          <StyledAnchor href='/cart' $cart>
+            Cart
+          </StyledAnchor>
+        </StyledList>
       </StyledUList>
     </nav>
   );
