@@ -15,6 +15,22 @@ const GlobalStyle = createGlobalStyle`
     font-size: 62.5%;
   }
 
+  body {
+    display: flex;
+    margin: 0 auto;
+
+    max-width: 120rem;
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    #root {
+      width: 100%;
+    }
+  }
+
 `;
 
 ReactDOM.createRoot(document.getElementById('root')).render(

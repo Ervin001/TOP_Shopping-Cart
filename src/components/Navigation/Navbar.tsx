@@ -1,9 +1,16 @@
 import React from 'react';
-import { StyledUList, StyledList, StyledAnchor } from './NavbarStyles';
+import {
+  StyledNav,
+  StyledUList,
+  StyledList,
+  StyledAnchor,
+} from './NavbarStyles';
+
+import cartLogo from '../../assets/icons/cart-outline.svg';
 
 function Navbar() {
   return (
-    <nav>
+    <StyledNav>
       <StyledUList>
         <StyledList>
           <StyledAnchor href='/'>Home</StyledAnchor>
@@ -13,11 +20,11 @@ function Navbar() {
         </StyledList>
         <StyledList>
           <StyledAnchor href='/cart' $cart>
-            Cart
+            <img src={cartLogo}></img>
           </StyledAnchor>
         </StyledList>
       </StyledUList>
-    </nav>
+    </StyledNav>
   );
 }
 
