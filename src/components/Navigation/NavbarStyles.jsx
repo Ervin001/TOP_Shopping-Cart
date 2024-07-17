@@ -31,11 +31,8 @@ export const StyledList = styled.li`
     margin-left: auto;
   }
 `;
-interface StyledAnchorProp {
-  $cart?: boolean;
-}
 
-export const StyledAnchor = styled.a<StyledAnchorProp>`
+export const StyledAnchor = styled.a`
   display: flex;
   align-items: center;
   height: 5rem;
