@@ -1,0 +1,26 @@
+:root {
+  --primary-nav-color: hsl(26, 61%, 56%);
+  --active-link-color: hsl(18, 62%, 40%);
+  --link-hover-effect-color: hsl(24, 53%, 52%);
+  --primary-border-radius: 14px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  max-width: 140rem;
+  margin: 0 auto;
+}

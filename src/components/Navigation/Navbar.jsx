@@ -1,29 +1,33 @@
-import {
-  StyledNav,
-  StyledUList,
-  StyledList,
-  StyledAnchor,
-} from './NavbarStyles';
-
 import cartLogo from '../../assets/icons/cart-outline.svg';
+import NavStyles from './Navbar.module.css';
 
 function Navbar() {
   return (
-    <StyledNav>
-      <StyledUList>
-        <StyledList>
-          <StyledAnchor href='/'>Home</StyledAnchor>
-        </StyledList>
-        <StyledList>
-          <StyledAnchor href='/favorites'>favorites</StyledAnchor>
-        </StyledList>
-        <StyledList>
-          <StyledAnchor href='/cart' $cart>
-            <img src={cartLogo}></img>
-          </StyledAnchor>
-        </StyledList>
-      </StyledUList>
-    </StyledNav>
+    <nav className={NavStyles['nav-container']}>
+      <ul className={NavStyles['unordered-list']}>
+        <li
+          className={`${NavStyles['list-items']} ${NavStyles['center-item']}`}
+        >
+          <a className={NavStyles.links} href='/'>
+            Home
+          </a>
+        </li>
+        <li
+          className={`${NavStyles['center-item']} ${NavStyles['list-items']} ${NavStyles['active-link']}`}
+        >
+          <a className={NavStyles.links} href='/favorites'>
+            Favorites
+          </a>
+        </li>
+        <li
+          className={`${NavStyles['list-items']} ${NavStyles['active-link']}`}
+        >
+          <a className={NavStyles.links} href='/cart'>
+            <img src={cartLogo} alt='Cart'></img>
+          </a>
+        </li>
+      </ul>
+    </nav>
   );
 }
 
