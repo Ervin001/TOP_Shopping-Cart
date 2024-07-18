@@ -20,10 +20,10 @@ function Navbar() {
           </a>
         </li>
         <li
-          className={`${NavStyles['list-items']} ${NavStyles['active-link']}`}
+          className={`${NavStyles['list-items']} ${NavStyles['center-item']} ${NavStyles['active-link']}`}
         >
-          <a className={NavStyles.links} href='/cart'>
-            <img src={cartLogo} alt='Cart'></img>
+          <a className={NavStyles['cart-link']} href='/cart'>
+            <img src={cartLogo} alt='Cart' className={NavStyles['cart-icon']} />
           </a>
         </li>
       </ul>
