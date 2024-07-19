@@ -1,64 +1,30 @@
 .nav-container {
-  display: flex;
-  margin: 2rem auto 0 auto;
-  height: 6rem;
   background-color: var(--primary-nav-color);
-  font-family: 'Inter';
-  border-radius: var(--primary-border-radius);
+  display: flex;
+  padding: 3rem;
+  margin-top: 2rem;
 }
 
 .unordered-list {
   display: flex;
   gap: 2rem;
-  flex-grow: 1;
-  padding: 0 2rem;
   list-style-type: none;
+  justify-content: flex-start;
+  width: 100%;
 }
 
-.list-items {
-  padding: 0.5rem 1.2rem;
+.list-item {
+  font-size: 2.6rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  color: white;
 }
 
-.list-items:last-child {
+.list-item:last-child {
   margin-left: auto;
 }
 
-.center-item {
-  align-self: center;
-}
-
-.list-items:hover {
-  background-color: var(--link-hover-effect-color);
-  border-radius: var(--primary-border-radius);
-}
-
-.active-link {
-  background-color: var(--active-link-color);
-  border-radius: var(--primary-border-radius);
-}
-
-.links {
-  display: flex;
-  height: 100%;
+/* order to style links: link,visited,focus,hover,active. */
+.anchor {
   text-decoration: none;
-  font-size: 2.6rem;
-  font-weight: 700;
-}
-
-/* Style specifically for the cart link */
-.cart-link {
-  display: flex;
-  align-items: center;
-}
-
-.cart-icon {
-  width: 40px;
-  height: 40px;
-}
-
-/* link style order */
-/* link, visited, hover, active */
-.links:link,
-.links:visited {
-  color: white;
 }
