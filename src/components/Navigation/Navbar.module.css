@@ -1,12 +1,15 @@
+/* Navbar.module.css */
 .nav-container {
   background-color: var(--primary-nav-color);
   display: flex;
-  padding: 3rem;
+  padding: 2.6rem 3rem;
   margin-top: 2rem;
+  border-radius: var(--primary-border-radius);
 }
 
 .unordered-list {
   display: flex;
+  align-items: center;
   gap: 2rem;
   list-style-type: none;
   justify-content: flex-start;
@@ -18,13 +21,38 @@
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   color: white;
+  padding: 1.8rem 2rem;
+
+  border-radius: var(--link-border-radius);
+  transition: all 0.3s ease-in-out;
 }
 
 .list-item:last-child {
   margin-left: auto;
 }
 
-/* order to style links: link,visited,focus,hover,active. */
+.list-item:hover:not(.list-item-active) {
+  background-color: var(--link-hover-effect-color);
+  border-radius: var(--link-border-radius);
+  border-radius: var(--link-border-radius);
+  cursor: pointer;
+}
+
+.list-item-active {
+  background-color: var(--active-link-color);
+  border-radius: var(--link-border-radius);
+}
+
 .anchor {
   text-decoration: none;
+}
+
+.anchor:link,
+.anchor:visited {
+  color: white;
+}
+
+/* shopping cart icon */
+ion-icon {
+  /* font-size: 64px; */
 }
