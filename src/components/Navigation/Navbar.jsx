@@ -1,8 +1,10 @@
 import NavStyles from './Navbar.module.css';
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   const [activeLink, setActiveLink] = useState('home');
+  const [numCartItems, setNumCartItems] = useState(0);
 
   return (
     <nav className={NavStyles['nav-container']}>
@@ -13,9 +15,9 @@ function Navbar() {
           }`}
           onClick={() => setActiveLink('home')}
         >
-          <a href='#' className={NavStyles.anchor}>
+          <Link to='/' className={NavStyles.anchor}>
             Home
-          </a>
+          </Link>
         </li>
         <li
           className={`${NavStyles['list-item']} ${
@@ -23,9 +25,9 @@ function Navbar() {
           }`}
           onClick={() => setActiveLink('favorites')}
         >
-          <a href='#' className={NavStyles.anchor}>
+          <Link to='favorites' className={NavStyles.anchor}>
             Favorites
-          </a>
+          </Link>
         </li>
         <li
           className={`${NavStyles['list-item']} ${
@@ -33,13 +35,12 @@ function Navbar() {
           }`}
           onClick={() => setActiveLink('cart')}
         >
-          <a href='#' className={NavStyles.anchor}>
+          <Link to='cart' className={NavStyles.anchor}>
             <ion-icon
               name='bag'
-              size='large'
               className={`${NavStyles['ion-icon']}`}
             ></ion-icon>
-          </a>
+          </Link>
         </li>
       </ul>
     </nav>
