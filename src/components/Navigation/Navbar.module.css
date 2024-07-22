@@ -38,9 +38,14 @@
   cursor: pointer;
 }
 
-.list-item-active {
+.active {
   background-color: var(--active-link-color);
   border-radius: var(--link-border-radius);
+}
+
+.list-item-active {
+  /* background-color: var(--active-link-color);
+  border-radius: var(--link-border-radius); */
 }
 
 .anchor {

@@ -1,6 +1,6 @@
 import NavStyles from './Navbar.module.css';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 function Navbar() {
   const [activeLink, setActiveLink] = useState('home');
@@ -15,9 +15,14 @@ function Navbar() {
           }`}
           onClick={() => setActiveLink('home')}
         >
-          <Link to='/' className={NavStyles.anchor}>
+          <NavLink
+            to='/'
+            className={({ isActive, isPending }) =>
+              isActive ? NavStyles.active : isPending ? NavStyles.pending : ''
+            }
+          >
             Home
-          </Link>
+          </NavLink>
         </li>
         <li
           className={`${NavStyles['list-item']} ${
@@ -25,9 +30,14 @@ function Navbar() {
           }`}
           onClick={() => setActiveLink('favorites')}
         >
-          <Link to='favorites' className={NavStyles.anchor}>
+          <NavLink
+            to='favorites'
+            className={({ isActive, isPending }) =>
+              isActive ? NavStyles.active : isPending ? NavStyles.pending : ''
+            }
+          >
             Favorites
-          </Link>
+          </NavLink>
         </li>
         <li
           className={`${NavStyles['list-item']} ${
@@ -35,12 +45,17 @@ function Navbar() {
           }`}
           onClick={() => setActiveLink('cart')}
         >
-          <Link to='cart' className={NavStyles.anchor}>
+          <NavLink
+            to='cart'
+            className={({ isActive, isPending }) =>
+              isActive ? NavStyles.active : isPending ? NavStyles.pending : ''
+            }
+          >
             <ion-icon
               name='bag'
               className={`${NavStyles['ion-icon']}`}
             ></ion-icon>
-          </Link>
+          </NavLink>
         </li>
       </ul>
     </nav>
