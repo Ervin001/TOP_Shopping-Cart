@@ -15,7 +15,8 @@ ul {
 .grid-item {
   display: flex;
   justify-content: center;
+
   background-color: white;
-  padding: 1rem;
+  /* padding: 1rem; */
   border-radius: var(--primary-border-radius);
 }
