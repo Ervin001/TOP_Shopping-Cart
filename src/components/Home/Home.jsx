@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Card from './Card/Card';
+import NavStyles from './Home.module.css';
 
 const useShoppingData = () => {
   const [data, setData] = useState(null);
@@ -7,7 +8,7 @@ const useShoppingData = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('https://fakestoreapi.com/products?limit=5')
+    fetch('https://fakestoreapi.com/products?limit=20')
       .then((response) => {
         if (response.status >= 400) {
           throw new Error('server error');
@@ -28,14 +29,11 @@ function Home() {
   if (loading) return <h2>Loading...</h2>;
   if (error) return <h2>Error</h2>;
 
-  data.forEach((d) => console.log(JSON.stringify(d)));
-
   return (
     <>
-      <h1>This is the Home</h1>
-      <ul>
+      <ul className={`${NavStyles['unordered-list']} ${NavStyles['grid']}`}>
         {data.map((item) => (
-          <li key={item.id}>
+          <li key={item.id} className={`${NavStyles['grid-item']}`}>
             <Card product={item} />
           </li>
         ))}

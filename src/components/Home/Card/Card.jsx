@@ -1,3 +1,5 @@
+import NavStyles from './Card.module.css';
+
 function Card({ product }) {
   return (
     <>
