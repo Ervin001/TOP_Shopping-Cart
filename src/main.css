@@ -29,3 +29,9 @@ body {
   margin: 0 auto;
   background-color: #ebebeb;
 }
+
+#root {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}

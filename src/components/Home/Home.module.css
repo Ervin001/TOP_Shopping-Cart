@@ -9,10 +9,12 @@ ul {
 .unordered-list {
   gap: 1rem;
   padding-top: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(15rem, 10fr));
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
 }
 
 .grid-item {
+  display: flex;
+  justify-content: center;
   background-color: white;
   padding: 1rem;
   border-radius: var(--primary-border-radius);
