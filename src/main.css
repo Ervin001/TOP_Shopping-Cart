@@ -34,4 +34,5 @@ body {
   display: flex;
   flex-direction: column;
   gap: 3rem;
+  padding: 0 0 4rem 0;
 }

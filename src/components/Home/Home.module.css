@@ -19,4 +19,9 @@ ul {
   background-color: white;
   /* padding: 1rem; */
   border-radius: var(--primary-border-radius);
+  transition: all 0.4s;
+}
+
+.grid-item:hover {
+  box-shadow: inset 0px 0px 1px 1px var(--active-link-color);
 }

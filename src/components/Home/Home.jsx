@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useOutletContext } from 'react-router-dom';
 import Card from './Card/Card';
 import NavStyles from './Home.module.css';
 
@@ -25,16 +26,21 @@ const useShoppingData = () => {
 
 function Home() {
   const { data, error, loading } = useShoppingData();
+  const [cart, setCart] = useOutletContext();
 
   if (loading) return <h2>Loading...</h2>;
   if (error) return <h2>Error</h2>;
+
+  const handleAddCart = (item) => {
+    setCart((prevCart) => [...prevCart, item]);
+  };
 
   return (
     <>
       <ul className={`${NavStyles['unordered-list']} ${NavStyles['grid']}`}>
         {data.map((item) => (
           <li key={item.id} className={`${NavStyles['grid-item']}`}>
-            <Card product={item} />
+            <Card product={item} onAddToCart={() => handleAddCart(item)} />
           </li>
         ))}
       </ul>

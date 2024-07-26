@@ -1,7 +1,7 @@
 import NavStyles from './Navbar.module.css';
 import { NavLink } from 'react-router-dom';
 
-function Navbar() {
+function Navbar({ cartValue }) {
   return (
     <nav className={NavStyles['nav-container']}>
       <ul className={NavStyles['unordered-list']}>
@@ -59,6 +59,7 @@ function Navbar() {
                 name='bag'
                 className={`${NavStyles['ion-icon']}`}
               ></ion-icon>
+              <span>{cartValue.length}</span>
             </NavLink>
           </div>
         </li>

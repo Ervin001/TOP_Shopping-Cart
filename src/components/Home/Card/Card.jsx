@@ -7,9 +7,19 @@ function truncateTitle(title) {
     : title;
 }
 
-function Card({ product }) {
+function getId(productId) {
+  console.log(productId);
+}
+
+function Card({ product, onAddToCart }) {
   return (
-    <a href='#' className={`${NavStyles['product-item']}`}>
+    <a
+      onClick={() => {
+        getId(product.id);
+      }}
+      href='#'
+      className={`${NavStyles['product-item']}`}
+    >
       <div className={`${NavStyles['product-img-container']}`}>
         <img className={`${NavStyles['item-img']}`} src={product.image}></img>
       </div>
@@ -18,7 +28,10 @@ function Card({ product }) {
       </h2>
       <div className={`${NavStyles['product-extra-info']}`}>
         <div className={`${NavStyles['btn-container']}`}>
-          <button className={`${NavStyles['add-to-cart-btn']}`}>
+          <button
+            onClick={onAddToCart}
+            className={`${NavStyles['add-to-cart-btn']}`}
+          >
             <ion-icon name='cart'></ion-icon>
             <span>Add to cart</span>
           </button>
