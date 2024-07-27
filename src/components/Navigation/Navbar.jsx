@@ -55,11 +55,15 @@ function Navbar({ cartValue }) {
                 } ${NavStyles.link} ${NavStyles['cart-link-padding']}`
               }
             >
-              <ion-icon
-                name='bag'
-                className={`${NavStyles['ion-icon']}`}
-              ></ion-icon>
-              <span>{cartValue.length}</span>
+              <div className={`${NavStyles['icon-wrapper']}`}>
+                <ion-icon
+                  name='bag'
+                  className={`${NavStyles['ion-icon']}`}
+                ></ion-icon>
+                <span className={`${NavStyles['cart-item-size']}`}>
+                  {cartValue.length}
+                </span>
+              </div>
             </NavLink>
           </div>
         </li>

@@ -65,7 +65,25 @@
   color: white;
 }
 
+.icon-wrapper {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* shopping cart icon */
 ion-icon {
-  font-size: 28px;
+  font-size: 30px;
+}
+
+.cart-item-size {
+  /* color: transparent; */
+  color: var(--primary-nav-color);
+  color: orange;
+  font-weight: 400;
+  font-size: 1.6rem;
+  background-color: transparent;
+  position: absolute;
+  top: 9px;
 }

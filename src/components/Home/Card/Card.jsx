@@ -11,7 +11,7 @@ function getId(productId) {
   console.log(productId);
 }
 
-function Card({ product, onAddToCart }) {
+function Card({ product, onAddToCart, inCart = false }) {
   return (
     <a
       onClick={() => {
@@ -26,18 +26,34 @@ function Card({ product, onAddToCart }) {
       <h2 className={`${NavStyles['product-title']}`}>
         {truncateTitle(product.title)}
       </h2>
-      <div className={`${NavStyles['product-extra-info']}`}>
-        <div className={`${NavStyles['btn-container']}`}>
-          <button
-            onClick={onAddToCart}
-            className={`${NavStyles['add-to-cart-btn']}`}
-          >
-            <ion-icon name='cart'></ion-icon>
-            <span>Add to cart</span>
-          </button>
+      {!inCart && (
+        <div className={`${NavStyles['product-extra-info']}`}>
+          <div className={`${NavStyles['btn-container']}`}>
+            <button
+              onClick={onAddToCart}
+              className={`${NavStyles['add-to-cart-btn']}`}
+            >
+              <ion-icon name='cart'></ion-icon>
+              <span>Add to cart</span>
+            </button>
+          </div>
+          <h4 className={`${NavStyles['product-price']}`}>${product.price}</h4>
         </div>
-        <h4 className={`${NavStyles['product-price']}`}>${product.price}</h4>
-      </div>
+      )}
+      {inCart && (
+        <div className={`${NavStyles['product-extra-info']}`}>
+          <div className={`${NavStyles['btn-container']}`}>
+            <button
+              onClick={onAddToCart}
+              className={`${NavStyles['remove-from-cart-btn']}`}
+            >
+              <ion-icon name='trash'></ion-icon>
+            </button>
+          </div>
+          <h4 className={`${NavStyles['product-price']}`}>${product.price}</h4>
+        </div>
+      )}
+
       {/* <p>{product.description}</p> */}
       {/* <p>{product.category}</p> */}
       {/* <h3>Rating</h3> */}
