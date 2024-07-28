@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import NavStyles from './Card.module.css';
 
 function truncateTitle(title) {
@@ -8,10 +10,10 @@ function truncateTitle(title) {
 }
 
 function getId(productId) {
-  console.log(productId);
+  // console.log(productId);
 }
 
-function Card({ product, onAddToCart, inCart = false }) {
+function Card({ product, onAddToCart, inCart = false, onRemoveFromCart }) {
   return (
     <a
       onClick={() => {
@@ -42,9 +44,10 @@ function Card({ product, onAddToCart, inCart = false }) {
       )}
       {inCart && (
         <div className={`${NavStyles['product-extra-info']}`}>
+          <h1>{product.quantity}</h1>
           <div className={`${NavStyles['btn-container']}`}>
             <button
-              onClick={onAddToCart}
+              onClick={onRemoveFromCart}
               className={`${NavStyles['remove-from-cart-btn']}`}
             >
               <ion-icon name='trash'></ion-icon>
