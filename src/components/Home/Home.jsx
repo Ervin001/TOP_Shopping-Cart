@@ -51,11 +51,13 @@ function Home() {
         (cartItem) => cartItem.uniqueId === item.uniqueId
       );
 
+      // check if item exists
       if (existingItem) {
-        return prevCart.map((cartItem) =>
-          cartItem.uniqueId === item.uniqueId
-            ? { ...cartItem, quantity: cartItem.quantity + 1 }
-            : cartItem
+        return prevCart.map(
+          (cartItem) =>
+            cartItem.uniqueId === item.uniqueId
+              ? { ...cartItem, quantity: cartItem.quantity + 1 } // If item exists then increase quantity
+              : cartItem // otherwise add item to cart
         );
       } else {
         return [...prevCart, { ...item, quantity: 1 }];

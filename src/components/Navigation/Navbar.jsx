@@ -1,7 +1,14 @@
 import NavStyles from './Navbar.module.css';
 import { NavLink } from 'react-router-dom';
+import { useContext } from 'react';
+import { ThemeContext } from '../App/App';
 
 function Navbar({ cartValue }) {
+  const { theme, toggleTheme } = useContext(ThemeContext);
+
+  // Get cart items, even when more than one item is added
+  const cartItemsNum = cartValue.reduce((acc, item) => acc + item.quantity, 0);
+
   return (
     <nav className={NavStyles['nav-container']}>
       <ul className={NavStyles['unordered-list']}>
@@ -41,6 +48,12 @@ function Navbar({ cartValue }) {
             </NavLink>
           </div>
         </li>
+        {/* theme */}
+        <li className={NavStyles['list-item']}>
+          <div className={NavStyles.spacer}>
+            <button onClick={toggleTheme}>{theme}</button>
+          </div>
+        </li>
         <li className={NavStyles['list-item']}>
           <div className={NavStyles.spacer}>
             <NavLink
@@ -61,7 +74,7 @@ function Navbar({ cartValue }) {
                   className={`${NavStyles['ion-icon']}`}
                 ></ion-icon>
                 <span className={`${NavStyles['cart-item-size']}`}>
-                  {cartValue.length}
+                  {cartItemsNum}
                 </span>
               </div>
             </NavLink>

@@ -1,7 +1,7 @@
 import { useOutletContext } from 'react-router-dom';
 
 import NavStyles from './Cart.module.css';
-import Card from './../Home/Card/Card';
+import Card from '../Home/Card/Card';
 import { useState } from 'react';
 
 function Cart() {
