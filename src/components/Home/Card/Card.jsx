@@ -9,19 +9,9 @@ function truncateTitle(title) {
     : title;
 }
 
-function getId(productId) {
-  // console.log(productId);
-}
-
 function Card({ product, onAddToCart, inCart = false, onRemoveFromCart }) {
   return (
-    <a
-      onClick={() => {
-        getId(product.id);
-      }}
-      href='#'
-      className={`${NavStyles['product-item']}`}
-    >
+    <a href='#' className={`${NavStyles['product-item']}`}>
       <div className={`${NavStyles['product-img-container']}`}>
         <img className={`${NavStyles['item-img']}`} src={product.image}></img>
       </div>
