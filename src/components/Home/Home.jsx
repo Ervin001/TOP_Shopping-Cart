@@ -25,6 +25,7 @@ const useShoppingData = () => {
           ...product,
           uniqueId: uuidv4(),
           quantity: 1,
+          inCart: false,
         }));
         setData(productWithUniqueId);
       })
@@ -57,10 +58,10 @@ function Home() {
           (cartItem) =>
             cartItem.uniqueId === item.uniqueId
               ? { ...cartItem, quantity: cartItem.quantity + 1 } // If item exists then increase quantity
-              : cartItem // otherwise add item to cart
+              : cartItem // if cart item is not the one selected then leave alone
         );
       } else {
-        return [...prevCart, { ...item, quantity: 1 }];
+        return [...prevCart, { ...item, quantity: 1, inCart: true }];
       }
     });
   };

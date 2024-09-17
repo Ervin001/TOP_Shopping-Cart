@@ -6,8 +6,12 @@ import { ThemeContext } from '../App/App';
 function Navbar({ cartValue }) {
   const { theme, toggleTheme } = useContext(ThemeContext);
 
+  cartValue.forEach((el) => console.log(el));
   // Get cart items, even when more than one item is added
-  const cartItemsNum = cartValue.reduce((acc, item) => acc + item.quantity, 0);
+  const cartItemsNum = cartValue.reduce((acc, item) => {
+    // need to check if item is in the cart already
+    return acc + item.quantity; // will happen last
+  }, 0);
 
   return (
     <nav className={NavStyles['nav-container']}>

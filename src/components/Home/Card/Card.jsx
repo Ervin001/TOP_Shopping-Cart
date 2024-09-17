@@ -9,7 +9,7 @@ function truncateTitle(title) {
     : title;
 }
 
-function Card({ product, onAddToCart, inCart = false, onRemoveFromCart }) {
+function Card({ product, onAddToCart, inCart, onRemoveFromCart }) {
   return (
     <a href='#' className={`${NavStyles['product-item']}`}>
       <div className={`${NavStyles['product-img-container']}`}>
