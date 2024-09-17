@@ -34,7 +34,9 @@ function Card({ product, onAddToCart, inCart = false, onRemoveFromCart }) {
       )}
       {inCart && (
         <div className={`${NavStyles['product-extra-info']}`}>
-          <h1>{product.quantity}</h1>
+          <div className={`${NavStyles['item-quantity']}`}>
+            {product.quantity}
+          </div>
           <div className={`${NavStyles['btn-container']}`}>
             <button
               onClick={onRemoveFromCart}

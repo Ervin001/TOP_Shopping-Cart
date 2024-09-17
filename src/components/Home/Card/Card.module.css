@@ -34,9 +34,6 @@
   padding-top: 2rem;
 }
 
-.btn-container {
-}
-
 .add-to-cart-btn {
   display: flex;
   align-items: center;
@@ -55,6 +52,23 @@
   background-color: var(--active-link-color);
   color: white;
   cursor: pointer;
+}
+
+/* quantity el */
+.item-quantity {
+  font-size: clamp(1.6rem, 2vw, 1.8rem);
+  font-weight: 800;
+  color: var(--active-link-color);
+  padding-right: 1rem;
+  /* position: absolute; */
+}
+
+.item-quantity:first-child {
+}
+
+.btn-container {
+  display: flex;
+  flex-grow: 1;
 }
 
 .remove-from-cart-btn {
