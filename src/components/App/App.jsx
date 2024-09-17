@@ -33,3 +33,6 @@ function App() {
 }
 
 export default App;
+/**
+ * TODO: Fix the following bug: When User leaves page and adds the same items to the cart, that item is added to the array. The problem is in the Home.jsx file in the useEffect hook. Started to fix by passing the cart state into the use effect and checking any changes that happen to it. This did not work as intended, instead only the cart array once in the Navbar is updated.
+ */
