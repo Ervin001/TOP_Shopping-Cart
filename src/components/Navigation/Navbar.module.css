@@ -5,6 +5,7 @@
   padding: 2.6rem 3rem;
   margin-top: 2rem;
   border-radius: var(--primary-border-radius);
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .unordered-list {

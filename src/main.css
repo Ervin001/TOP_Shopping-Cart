@@ -1,4 +1,15 @@
 :root {
+  --primary-nav-color: #33a279;
+  --active-link-color: #1e503e;
+  --link-hover-effect-color: #389472;
+  /* --primary-nav-color: hsl(26, 61%, 56%); */
+  /* --active-link-color: hsl(18, 67%, 45%); */
+  /* --link-hover-effect-color: hsl(24, 53%, 52%); */
+  --primary-border-radius: 20px;
+  --link-border-radius: 12px;
+}
+
+[data-theme='light'] {
   --primary-nav-color: #55e0ac;
   --active-link-color: #1e503e;
   --link-hover-effect-color: #389472;

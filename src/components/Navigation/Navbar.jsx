@@ -12,7 +12,7 @@ function Navbar({ cartValue }) {
   }, 0);
 
   return (
-    <nav className={NavStyles['nav-container']}>
+    <nav className={`${NavStyles['nav-container']} `}>
       <ul className={NavStyles['unordered-list']}>
         <li className={NavStyles['list-item']}>
           <div className={NavStyles.spacer}>
