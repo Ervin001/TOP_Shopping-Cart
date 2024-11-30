@@ -26,8 +26,6 @@ const useShoppingData = (cart) => {
           ...product,
           uniqueId: uuidv4(),
           quantity: 1,
-          // Error: When user leaves page and comes back inCart will alway be set to false
-          // inCart: false,
           inCart: currentCart.some((cartItem) => cartItem.id === product.id), // .some() will return true or false, setting this to either one dynamically
         }));
         setData(productWithUniqueId);

@@ -2,6 +2,7 @@
   --primary-nav-color: #33a279;
   --active-link-color: #1e503e;
   --link-hover-effect-color: #389472;
+  --main-background-color: white;
   /* --primary-nav-color: hsl(26, 61%, 56%); */
   /* --active-link-color: hsl(18, 67%, 45%); */
   /* --link-hover-effect-color: hsl(24, 53%, 52%); */
@@ -13,6 +14,7 @@
   --primary-nav-color: #55e0ac;
   --active-link-color: #1e503e;
   --link-hover-effect-color: #389472;
+  --main-background-color: white;
   /* --primary-nav-color: hsl(26, 61%, 56%); */
   /* --active-link-color: hsl(18, 67%, 45%); */
   /* --link-hover-effect-color: hsl(24, 53%, 52%); */
@@ -38,7 +40,6 @@ img {
 body {
   max-width: 140rem;
   margin: 0 auto;
-  background-color: #ebebeb;
 }
 
 #root {
@@ -46,4 +47,5 @@ body {
   flex-direction: column;
   gap: 3rem;
   padding: 0 0 4rem 0;
+  background-color: var(--main-background-color);
 }
